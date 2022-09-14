@@ -16,7 +16,7 @@ class CreateTableSchoolTeachers extends Migration
         Schema::create('school_teacher', function (Blueprint $table) {
 
             $table->foreignId('school_id')->constrained('schools')->onDelete('cascade');
-            $table->foreignId('Specialization_id')->constrained('Specializations')->onDelete('cascade');
+            $table->foreignId('specialization_id')->constrained('Specializations')->onDelete('cascade');
             $table->integer('teachers_num');
             $table->timestamps();
         });
