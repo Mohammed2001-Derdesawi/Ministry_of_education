@@ -1,0 +1,775 @@
+:root{
+    --main-color:#08B0A2;
+    --main-color-alt:#64C3B6;
+}
+
+body{
+    font-family: 'Almarai', sans-serif;
+    background-color:#fff;
+    /* overflow: auto; */
+    /* position: relative; */
+
+  
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.logo img{
+    width: 200px;
+   
+}
+.header p{
+    text-align: center;
+    color: black;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.main-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: fit-content;
+    padding: 30px 120px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgb(211, 211, 211);
+}
+select.offices{
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: 1px solid var(--main-color);
+    width: 350px;
+    height: 60px;
+    padding-right: 20px;
+}
+  
+.main-form h2{
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 900px !important;
+    margin-bottom: 30px;
+}
+.main-form input, .levels select, .place, .table-submit .main-form select{
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: 1px solid var(--main-color);
+    width: 350px;
+    height: 60px;
+    padding-right: 20px;
+    
+}
+
+ .main-form input[type="submit"], .table-submit{
+    background-color: var(--main-color);
+    color:aliceblue;
+    margin-top: 40px;
+}
+.main-form input[type="submit"]:hover,.table-submit:hover{
+    background-color: var(--main-color-alt);
+    color:aliceblue;
+}
+.table-submit{
+    /* margin-right: calc(100% / 2 - 175px); */
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.school-name{
+    font-size: 22px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    color: var(--main-color);
+    font-weight: 700;
+    text-align: center;
+   
+}
+.table-submit1 {
+    width: 350px;
+    height: 60px;
+    border-radius: 50px;
+    margin-right: calc(100%/2 - 125px);
+    background-color: var(--main-color);
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.table-submit2{
+    border: none;
+    width: 350px;
+    height: 60px;
+    line-height: 50px;
+    border-radius: 50px;
+    /* margin-right: calc(100%/2 - 125px); */
+    background-color: var(--main-color);
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.table-submit3{
+    color: var(--main-color);
+    background-color: #eee;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.141);
+}
+.table-submit3:hover{
+    color: #fff;
+    background-color: var(--main-color);
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.141);
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.bg{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+    opacity: .1;
+  margin-right:120px;
+    z-index: -2;
+    top: 300px;
+
+}
+
+form.admin-school{
+    margin-bottom: 50px;
+    height: auto;
+}
+input[type="radio"]:checked+label { font-weight: bold; }
+input[type="radio"] {
+    /* remove standard background appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* create custom radiobutton appearance */
+    display: inline-block;
+     width:15px; 
+    height: 15px; 
+    padding: 6px;
+    /* background-color only for content */
+    background-clip: content-box;
+    border: 1px solid var(--main-color);
+    background-color: #e7e6e700;
+    border-radius: 50%;
+  }
+  input[type="radio"]:checked{
+    background-color: var(--main-color-alt)!important;
+    width: 20px;
+    height: 20px;
+}
+
+input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    outline: #1AB6C7;
+}
+.gender, .type{
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+}
+.gender label, .type label{
+    margin-left: 20px;
+}
+.gender span, .type span,.levels label{
+    margin-left: 40px;
+    font-weight: 700;
+}
+.details{
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+}
+.details label{
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.details::after{
+content: "";
+border-bottom: .5px dashed #000;
+margin: 20px 0;
+}
+.gender::after, .type::after{
+    content: "";
+    border-bottom: .5px dashed #000;
+    margin: 20px 0;
+    width: 350px;
+}
+.selection{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.all-super{
+    text-align: center;
+    color: var(--main-color);
+    font-size: 22px;
+    font-weight: 700;
+}
+.all-schools-form1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form.all-schools-form2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a.supervisor-sign{
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 10px 25px;
+    color: #fff;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+table.teachers-spec{
+    /* width: 50% !important; */
+    /* margin-right: calc(100% / 2 - 300px); */
+    background-color: #fff;
+    padding: 10px;
+    overflow-x: hidden;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.title{
+    font-size: 18px;
+    text-align: right;
+    font-weight: 900;
+    color: var(--main-color);
+    margin-top: 60px;
+    margin-right: 350px;
+}
+.card-title{
+    font-weight: 700;
+    color: var(--main-color);
+}
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+ 
+}
+.card-text{
+    text-align: center;
+    padding-bottom: 20px;
+}
+table.allschools{
+    margin-bottom: 50px;
+}
+table.allschools td{
+    background-color: rgb(240, 240, 240 , .5);
+}
+table td.colored{
+    background-color: #d1e7dd;
+}
+table td.colored1{
+    background-color: #fff3cd;
+}
+table td.gender1{
+    background-color: #cff4fc;
+    vertical-align: middle;
+}
+table td.colored-type{
+    background-color: #e2e3e5;
+}
+
+.stats-sch tr th{
+    text-align: right;
+}
+.title1{
+    font-size: 22px;
+    color: var(--main-color);
+    text-align: center;
+    margin-top: 50px;
+}
+.place{
+    margin-right: 25px;
+    margin-top: 20px;
+}
+.location{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* margin-right: 350px; */
+}
+
+table tr th, table tr td{
+    text-align: center;
+    padding: 20px !important;
+}
+table tr td input{
+    border: 2px solid #08b0a2;
+    border-radius: 20px;
+    padding-right: 10px;
+    width: 157px;
+    font-size: 12px;
+    height: 33px;
+
+}
+.card{
+    text-align: center;
+    border-radius: 20px;
+}
+.card-details{
+    display: flex;
+  
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+.card-details .card{
+    width: 100%;
+   
+    padding: 20px;
+    box-shadow: 0 0 10px #c4c4c4;
+}
+.show-btn{
+    background-color: var(--main-color);
+    border-radius: 20px;
+    border: none;
+}
+.show-btn:hover{
+    background-color: var(--main-color-alt);
+    border-radius: 20px;
+    border: none;
+}
+/* All schools Styling */
+table.all-schools{
+    width: 100%;
+    margin-left: 10px;
+}
+.btns button{
+    border-radius: 50px !important;
+    height: 50px !important;
+    border: 1px solid var(--main-color);
+}
+.btns button:hover{
+    border-radius: 50px !important;
+    height: 50px !important;
+    background-color:var(--main-color);
+}
+table.all-schools tr th{
+    white-space:nowrap;
+    font-size:12px;
+    padding-right: 0 !important;
+}
+table.all-schools tr td{
+    font-size: 14px;
+}
+table.all-schools tr td input.box{
+    border-radius: 5px;
+    /* padding-right: 10px; */
+ width: 20px !important;
+    font-size: 12px;
+    font-weight: 600;
+    
+}
+.schools{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    padding-top: 30px;
+}
+input.box[type="checkbox"]:checked{
+    background-color: var(--main-color-alt) !important;
+    
+}
+
+.table-stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 250px;
+    padding-left: 50px;
+    background-color: rgba(238, 238, 238, 0.624); 
+    border-radius: 0 50px 0 0;
+}
+
+
+table.stats tr, table .stats tr td{
+font-size: 14px;
+}
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    /* width: 100%; */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 20px;
+   
+  }
+.locations-libraries{
+    display: flex;
+    flex-direction: column;
+}
+.one-place{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    padding-bottom: 10px;
+}
+.save-modal{
+    background-color: var(--main-color);
+    color: #fff;
+}
+.all-schools-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 60px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.119);
+    border-radius: 50px;
+    /* padding-top: 50px; */
+    margin-bottom: 50px;
+    
+}
+.all-schools-form h2, h2.all-offices {
+    text-align: center;
+    color:var(--main-color);
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 800;
+    margin-top: 50px;
+}
+table.all-schools tr td{
+    text-align: center !important;
+}
+.card-detail{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    
+}
+.card-detail .card1{
+  margin-left: 20px;
+  padding: 20px;
+    
+}
+
+
+.edu-off{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 40px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+     /* margin-right: 150px; */
+}
+ul li a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+ul li{
+    margin-bottom: 20px;
+}
+.table-responsive{
+    overflow: visible;
+    /* margin-right: 100px; */
+}
+.table-responsive h3{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: 800;
+    color: var(--main-color);
+
+}
+.table-responsive h4{
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  
+}
+.show-btn{
+    background-color: var(--main-color);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.show-btn:focus, .show-btn:active{
+    background-color: var(--main-color);
+    border-radius: 10px;
+    box-shadow: none;
+}
+.sign-type{
+    margin-bottom: 30px;
+}
+.sign-type::after{
+    content: none;
+   
+}
+.all-schools-form1 {
+    display: flex;
+    flex-direction: column;
+}
+a.signup{
+    color: var(--main-color);
+    padding-left: 20px;
+    text-decoration: none;
+    
+}
+form.admin-school div:last-of-type::after{
+    content: none !important;
+}
+
+
+/* MediaQuery */
+@media screen and (max-width: 767px){
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+ 
+}
+.change-school{
+    margin-right: 401px;
+}
+
+.card-details {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    margin-top: 40px;
+    width: max-content;
+    margin-right: 100px;
+}
+.table-responsive{
+    overflow: visible;
+  /* margin-right: 80%; */
+}
+.btns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* .table-responsive {
+    overflow-x: hidden;
+} */
+table.allschools{
+    margin-bottom: 50px;
+    margin-right: 350px !important;
+    width: auto;
+}
+.table-submit{
+    margin-right: calc(100%/2 - 125px);
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo img{
+    width: 100px !important;
+}
+.main-form{
+   width: calc(100% - 20px);
+   padding: 30px 0px;
+   /* margin-right: 0px; */
+}
+.main-form input, .levels select, .place, .table-submit .main-form select{
+    width: 250px;
+    height: 50px;
+}
+.sign-type::after{
+    content:  none !important;
+   
+}
+input[type="radio"]{
+    width: 10px !important;
+    height: 10px !important;
+}
+
+
+    form.admin-school {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;      
+        width: fit-content;
+        padding: 40px !important;
+        border-radius: 50px;
+     
+    }
+    .header p {
+        text-align: center;
+        color: black;
+        font-weight: 700;
+        font-size: 12px !important;
+    }
+  
+    /* .close-btn{
+        background-color: #bb2d3b !important
+        ;
+    }
+    */
+    .location {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .all-schools-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+    }
+    .table-stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0px;
+        padding-left: 0px;
+        background-color: rgba(238, 238, 238, 0.624);
+        margin-bottom: 50px;
+        border-radius: 50px;
+       
+    }
+    .schools{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0px;
+        
+    }
+    .all-schools-form{
+        margin-top: 20px !important;
+        background-color: none;
+        box-shadow: none;
+        padding-top: 20px;
+        
+    }
+
+form input, .levels select{
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: 1px solid var(--main-color);
+    width: 250px !important;
+    height: 40px;
+    /* padding-right: 20px; */
+    font-size: 12px;
+    
+}
+select.offices{
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: 1px solid var(--main-color);
+    width: 250px;
+    height: 40px;
+    padding-right: 20px;
+}
+label{
+    font-size: 14px;
+}
+form h2{
+    font-size: 14px;
+}
+.gender span, .type span,.levels label{
+    margin-right: 40px;
+    font-weight: 700;
+    font-size: 14px;
+}
+.gender::after, .type::after{
+    content: "";
+    border-bottom: .5px dashed #000;
+    margin: 20px 10px;
+    width: 300px !important;
+}
+.table .teachers{
+    margin: 0 30px;
+    
+}
+.teachers-spec td{
+    white-space: nowrap;
+    
+}
+.teachers-spec td input{
+    width: 150px !important;
+    
+    
+}
+
+}
+/**********************/
+@media (max-width:992px) {
+  .bg img{
+    width: 250px;
+  }
+
+    .logo img{
+        width: 200px;
+       
+    }
+    .header p{
+        text-align: center;
+        color: black;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    
+  
+    
+    /* form input, .levels select{
+        margin-bottom: 20px;
+        border-radius: 50px;
+        border: 1px solid var(--main-color);
+        width: 300px;
+        height: 40px;
+        padding-right: 20px;
+        font-size: 12px;
+        
+    }
+    label{
+        font-size: 14px;
+    }
+    form h2{
+        font-size: 14px;
+    }
+    .gender span, .type span,.levels label{
+        margin-right: 40px;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    .gender::after, .type::after{
+        content: "";
+        border-bottom: .5px dashed #000;
+        margin: 20px 10px;
+        width: 300px !important;
+    } */
+}
