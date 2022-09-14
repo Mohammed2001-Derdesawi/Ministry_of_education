@@ -20,7 +20,9 @@ use App\Models\School;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/',function (){
+    return redirect()->route('login');
+});
 Route::middleware('director')->name('director.')->prefix('director')->group(function(){
     Route::name('school.')->prefix('school/')->group(function (){
         Route::get('/create/step/first',[SchoolController::class,'firstStepPage'])->name('firstpage');
