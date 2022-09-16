@@ -34,7 +34,11 @@ class CreateSchoolsTable extends Migration
             $table->integer('admins_num');  // عدد الإدرايين
             $table->boolean('status')->default(true);
             $table->foreignId('school_rating_id')->constrained('school_ratings');
-            $table->foreignId('direction_id')->constrained('directions');
+            $table->unsignedBigInteger('direction_id')->nullable();
+            $table->foreign('direction_id')->references('id')->on('directions')->nullable()->nullOnDelete();
+            $table->unsignedBigInteger('old_direction_id')->nullable();
+            $table->foreign('old_direction_id')->references('id')->on('old_directions')->nullable()->nullOnDelete();
+
             $table->foreignId('director_id')->constrained('directors');
 
             $table->timestamps();

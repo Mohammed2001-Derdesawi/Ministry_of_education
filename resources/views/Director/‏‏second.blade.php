@@ -46,7 +46,7 @@
       <label for="level"> فترة العمل </label>
       <select name="time" id="">
         <option value="night">مسائي </option>
-        <option value="morning"> صباحي</option>
+        <option value="morning" selected> صباحي</option>
 
       </select>
       <span class="text-danger" style="padding: 10px 0;">

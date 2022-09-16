@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-@include('Layouts.head',['title'=>'تفاصيل المكتب'])
-<body>
 
 
+@php
+    $title='تفاصيل المكتب';
+@endphp
+@extends('Administration.master')
 
-    @include('Layouts.header')
+@section('content')
+
+
     <div class="container">
 
       <form action="" class="all-schools-form">
@@ -82,7 +83,7 @@
 
         <div class="table-responsive schools">
 
-          <h3>إجمالي عدد المدارس في مكتب  التعليم <span>{{$direction->schools_count??0}}</span></h3>
+          <h3>إجمالي عدد المدارس في   {{$direction->direction}} <span>({{$direction->schools_count??0}})</span></h3>
 
           <h4>قائمة المدارس المسندة للمكتب</h4>
           <form method="GET" id="searchForm">
@@ -127,8 +128,4 @@
     });
 </script>
 
-@include('Layouts.scripts')
-
-
-</body>
-</html>
+@endsection

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableDirectionsSchools extends Migration
+class CreateOldDirectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateTableDirectionsSchools extends Migration
      */
     public function up()
     {
-        Schema::create('direction_school', function (Blueprint $table) {
-            $table->foreignId('direction_id')->constrained('directions')->onDelete('cascade');
-            $table->foreignId('school_id')->constrained('schools')->onDelete('cascade');
+        Schema::create('old_directions', function (Blueprint $table) {
+            $table->id();
+            $table->string('direction');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateTableDirectionsSchools extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_directions_schools');
+        Schema::dropIfExists('old_directions');
     }
 }

@@ -20,7 +20,7 @@ class CreateOfficesTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->foreignId('direction_id')->constrained('directions')->cascadeOnDelete();
+            $table->foreignId('old_direction_id')->constrained('old_directions')->cascadeOnDelete();
             $table->timestamps();
         });
     }

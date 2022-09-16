@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\OldDirection;
 use App\Models\Specialization;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Supervisor extends Model
 {
     use HasFactory;
-    protected $fillable=['name','direction_id','specialization_id','civil','gender'];
+    protected $fillable=['name','direction_id','specialization_id','civil','gender','old_direction_id'];
 
     /**
      * Get the office that owns the Supervisor
@@ -20,6 +21,15 @@ class Supervisor extends Model
     public function direction(): BelongsTo
     {
         return $this->belongsTo(Direction::class, 'direction_id', 'id');
+    }
+     /**
+     * Get the office that owns the Supervisor
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function old_direction(): BelongsTo
+    {
+        return $this->belongsTo(OldDirection::class, 'old_direction_id', 'id');
     }
 
     /**
@@ -47,5 +57,10 @@ class Supervisor extends Model
         });
 
 
+    }
+
+    public function scopeCountGender($query,$gender,$col='direction_id')
+    {
+         return $query->where('gender',$gender)->whereNotNull($col)->count();
     }
 }

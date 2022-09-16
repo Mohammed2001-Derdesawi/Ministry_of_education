@@ -18,9 +18,13 @@ class CreateSupervisorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->enum('gender',['male','female']);
-            $table->foreignId('direction_id')->constrained('directions')->cascadeOnDelete();
             $table->string('civil');
             $table->foreignId('specialization_id')->constrained('specializations')->cascadeOnDelete();
+            $table->unsignedBigInteger('direction_id')->nullable();
+            $table->foreign('direction_id')->references('id')->on('directions')->nullable()->nullOnDelete();
+            $table->unsignedBigInteger('old_direction_id')->nullable();
+            $table->foreign('old_direction_id')->references('id')->on('old_directions')->nullable()->nullOnDelete();
+
             $table->timestamps();
         });
     }

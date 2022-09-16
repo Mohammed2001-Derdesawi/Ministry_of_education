@@ -43,11 +43,7 @@ class Direction extends Model
       }
 
 
-      public function getRatingAttribute()
-      {
-        return 'asdasdsa';
 
-      }
       public function getRatingsAttribute()
       {
 

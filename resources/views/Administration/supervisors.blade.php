@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
 
-    @include('Layouts.head',['title'=>'جميع المشرفين'])
-<body>
+@php
+    $title="جميع المشرفين";
+@endphp
+@extends('Administration.master')
 
 
 
-    @include('Layouts.header')
+
+    @section('content')
     <div class="container-fluid">
         @if (Session::has('success'))
 
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info text-center" role="alert">
            {{Session::get('success')}}
           </div>
 
@@ -124,7 +125,7 @@
 
 
 
-</div>
+
 
 
 
@@ -141,8 +142,8 @@
     });
 </script>
 
-@include('Layouts.scripts')
+@endsection
 
 
-</body>
-</html>
+
+

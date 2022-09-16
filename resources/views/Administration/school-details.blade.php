@@ -148,7 +148,7 @@
 
                   <form action="{{route('admin.school.change',$school->id)}}" method="POST">
                     @csrf
-                    <button type="submit" class="btn table-submit2 table-submit3">{{$school->status?'فتح':"إغلاق"}} المدرسة</button>
+                    <button type="submit" class="btn table-submit2 table-submit3">{{!$school->status?'فتح':"إغلاق"}} المدرسة</button>
                 </form>
 
                </div>

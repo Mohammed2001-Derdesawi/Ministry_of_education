@@ -12,7 +12,7 @@
         @csrf
         <h2>إنشاء حساب جديد   </h2>
         <div class="gender sign-type">
-          <span>التسجيل ك</span><br>
+
           <span class="text-danger" style="padding: 10px 0;">
             {{$errors->first("type")}}
           </span>
@@ -57,7 +57,7 @@
           </div>
 
 
-        <input type="submit" class="form-input">
+        <input type="submit" class="form-input" value="تسجيل الدخول">
 
         <a href="{{route('login')}}" class="signup">تسجيل  دخول</a>
 
@@ -93,10 +93,7 @@
 
 
           }
-        // if(manageroffice)
-        // {
 
-        // }
     </script>
 </body>
 

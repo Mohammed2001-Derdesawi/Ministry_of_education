@@ -7,6 +7,7 @@
 
 
     @include('Layouts.header')
+
     <div class="container-fluid">
       <form  method="GET" id="searchForm" class="all-schools-form3">
         @if (Session::has('success'))
@@ -94,7 +95,7 @@
             <td>متوسط</td>
             @endif
 
-            <td> {{$school->direction->direction}}</td>
+            <td> {{$school->old_direction->direction}}</td>
             <td> {{$school->students_num}}</td>
             <td> {{$school->teachers_num}}</td>
             <td> {{$school->agents_num}}</td>
@@ -119,12 +120,7 @@
     </button>
 
    </div>
-   <div class="col-lg-4">
 
-    <a href="{{route('office.main')}}" class="btn table-submit2">
-        الرجوع للصفحة الرئيسية
-    </a>
-   </div>
 
  </div>
 

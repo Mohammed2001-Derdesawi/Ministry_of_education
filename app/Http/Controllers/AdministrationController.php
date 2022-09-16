@@ -6,6 +6,7 @@ use App\Models\Direction;
 use App\Models\Specialization;
 use App\Models\Supervisor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdministrationController extends Controller
 {
@@ -38,6 +39,12 @@ class AdministrationController extends Controller
        return view('Administration.office-details',['direction'=>$direction,'schools'=>$schools]);
 
 
+   }
+
+   public function logout()
+   {
+    Auth::guard('admin')->logout();
+    return redirect()->route('login');
    }
 
 

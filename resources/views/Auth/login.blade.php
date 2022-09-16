@@ -34,7 +34,7 @@
         @csrf
         <h2>بوابة الدخول  </h2>
         <div class="gender sign-type">
-          <span>التسجيل ك</span><br>
+
           <div class="selection">
             <input type="radio" id="male" name="type" value="director">
               <label for="male">مدير مدرسة</label>
@@ -53,7 +53,7 @@
 
 
         <input type="password" name="password" placeholder="كلمة المرور" class="form-input">
-        <input type="submit" class="form-input">
+        <input type="submit" class="form-input" value="دخول">
 
         <div class="links">
           <a href="{{route('signup')}}" class="signup">تسجيل حساب جديد</a>

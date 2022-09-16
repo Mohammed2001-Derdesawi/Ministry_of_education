@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Direction;
+use App\Models\OldDirection;
 use App\Models\SchoolRatings;
 use App\Models\Specialization;
 use Illuminate\Database\Seeder;
@@ -20,6 +21,12 @@ class DatabaseSeeder extends Seeder
         foreach($dbseed['directions'] as $direction)
         {
             Direction::create([
+                'direction'=>$direction
+            ]);
+        }
+        foreach($dbseed['old_directions'] as $direction)
+        {
+            OldDirection::create([
                 'direction'=>$direction
             ]);
         }

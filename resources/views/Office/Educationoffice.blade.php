@@ -7,6 +7,7 @@
   <div class="container">
 
    @include('Layouts.header')
+
     <br>
     <br>
     <br>
@@ -62,10 +63,7 @@
              $total+=$subtotal;
         @endphp
 
-        {{-- <td>100</td>
-        <td>100</td>
-        <td>100</td>
-        <td>100</td> --}}
+
         <td class="total colored1">{{$total}}</td>
 
 
@@ -137,50 +135,12 @@
 
 
 
-    {{-- <table class="table table-bordered allschools">
-      <tr>
 
-      </tr>
-      <tr>
-        <td colspan="2" class="colored colored-type">النوع</td>
-        <td>تربية عام</td>
-        <td>تعليم أهلي</td>
-        <td> تحفيظ قرءان</td>
-        <td>  تربية خاصة</td>
-        <td class="colored">  المجموع الكلي لكل قطاع </td>
-      </tr>
-      <tr>
-        <td rowspan="2" class="gender1 colored-type">القطاع</td>
-        <td class="gender1">بنين</td>
-        <td>100</td>
-        <td>100</td>
-        <td>100</td>
-        <td>100</td>
-        <td class="total colored1">400</td>
-      </tr>
-      <tr>
-        <td class="gender1">بنات</td>
-        <td>200</td>
-        <td>150</td>
-        <td>150</td>
-        <td>150</td>
-        <td class="total colored1" >650</td>
-      </tr>
-      <tr>
-        <td colspan="2" class="colored">المجموع الكلي لكل نوع</td>
-        <td class="colored1">300</td>
-        <td class="colored1">250</td>
-        <td class="colored1">250</td>
-        <td class="colored1">250</td>
-        <td class="total colored">المجموع الكلي للمدارس =0 مدرسة</td>
-      </tr>
-
-    </table> --}}
 
 
     <div>
       <h5 class="card-title">عدد المعلمين الكلي</h5>
-      <p class="card-text">معلم ومعلمة {{$direction->sh_teachers_total}}</p>
+      <p class="card-text">معلم ومعلمة {{$direction->sh_teachers_total??0}}</p>
 
 
 
@@ -255,7 +215,7 @@
     </table>
     <div>
       <h5 class="card-title">عدد الطلاب والطالبات الكلي</h5>
-      <p class="card-text">طالب وطالبة {{$direction->sh_students_total}}</p>
+      <p class="card-text">طالب وطالبة {{$direction->sh_students_total??0}}</p>
 
 
 

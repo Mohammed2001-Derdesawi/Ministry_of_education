@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\School\AssignSchoolRequest;
-use App\Http\Requests\School\AssignToOfficeRequest;
-use App\Http\Requests\School\CreateRequest;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use App\Http\Requests\School\FirstStepRequest;
-use App\Http\Requests\School\SecondRequest;
-use App\Http\Requests\School\ThirdRequest;
-use App\Models\Direction;
 use App\Models\School;
+use App\Models\Direction;
+use App\Models\OldDirection;
+use Illuminate\Http\Request;
 use App\Models\SchoolRatings;
 use App\Models\Specialization;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use App\Http\Requests\School\ThirdRequest;
 use function PHPUnit\Framework\returnSelf;
+use App\Http\Requests\School\CreateRequest;
+use App\Http\Requests\School\SecondRequest;
+use App\Http\Requests\School\FirstStepRequest;
+
+use App\Http\Requests\School\AssignSchoolRequest;
+use App\Http\Requests\School\AssignToOfficeRequest;
 
 class SchoolController extends Controller
 {
@@ -50,7 +51,7 @@ class SchoolController extends Controller
 
      }
      public function firstStepPage(){
-        $directions=Direction::select('id','direction')->get();
+        $directions=OldDirection::select('id','direction')->get();
         $schoolratings=SchoolRatings::select('id','name')->get();
          return view('Director.first',['directions'=>$directions,'schoolratings'=>$schoolratings]);
 
@@ -65,7 +66,8 @@ class SchoolController extends Controller
             'name'=>$request->name,
             'ministerial_number'=>$request->ministerial_number,
             'gender'=>$request->gender,
-            'direction_id'=>$request->direction,
+            'old_direction_id'=>$request->direction,
+
             'school_rating_id'=>$request->school_rating
         ]);
 
@@ -141,7 +143,8 @@ class SchoolController extends Controller
         {
 
             School::findOrFail($school)->update([
-                'direction_id'=>$request->directions
+                'direction_id'=>$request->directions,
+                'old_direction_id'=>null
             ]);
         }
 
@@ -151,10 +154,10 @@ class SchoolController extends Controller
 
      public function allSchools()
      {
-      $direction=Auth::guard('office')->user()->direction;
+      $direction=Auth::guard('office')->user()->old_direction;
 
 
-      $schools=School::where('direction_id',$direction->id)->with('direction','director')->search(request()->search)->paginate(10);
+      $schools=School::where('old_direction_id',$direction->id)->with('old_direction','director')->search(request()->search)->paginate(10);
 
 
 
@@ -167,7 +170,7 @@ class SchoolController extends Controller
 
      public function show($id)
      {
-        $school=School::with('director:id,name','rating','direction:id,direction')->findOrFail($id);
+        $school=School::with('director:id,name','rating','direction:id,direction','old_direction:id,direction')->findOrFail($id);
         $specializations=Specialization::with(['schools'=>function($q) use($school){
             return $q->where('school_id',$school->id);
         }])->get();
@@ -189,7 +192,9 @@ class SchoolController extends Controller
      {
          $school=School::findOrFail($id);
          $school->update([
-            'direction_id'=>$request->direction
+            'direction_id'=>$request->direction,
+            'old_direction_id'=>null,
+
          ]);
 
          return redirect()->route('admin.school.show',$school->id)->with('success','تم  نقل المدرسة بنجاح');

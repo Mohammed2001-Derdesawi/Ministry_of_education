@@ -40,7 +40,7 @@
     </span>
     </div>
     <div class="details">
-      <label for="">عدد  محضري الاختبارات </label>
+      <label for="">عدد  محضري المختبرات </label>
       <input name="exam_preparers" type="text" value="{{old('exam_preparers')}}">
       <span class="text-danger" style="padding: 10px 0;">
         {{$errors->first("exam_preparers")}}

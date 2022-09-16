@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\OldDirection;
 use App\Models\Specialization;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -30,6 +31,7 @@ class School extends Model
         'admins_num',
         'school_rating_id',
         'direction_id',
+        'old_direction_id',
         'director_id',
         'ministerial_number',
         'status'
@@ -67,6 +69,16 @@ class School extends Model
     {
         return $this->belongsTo(Direction::class, 'direction_id', 'id');
     }
+    /**
+     * Get the direction that owns the School
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function old_direction(): BelongsTo
+    {
+        return $this->belongsTo(OldDirection::class, 'old_direction_id', 'id');
+    }
+
 
     /**
      * Get the director that owns the School

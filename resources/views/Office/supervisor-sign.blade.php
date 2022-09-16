@@ -8,6 +8,7 @@
 
     @include('Layouts.header')
 
+
   <form action="{{route('office.supervisor.create')}}" method="POST" class="main-form admin-school">
    @csrf
     <h2>يرجى إدخال البيانات المطلوبة</h2>

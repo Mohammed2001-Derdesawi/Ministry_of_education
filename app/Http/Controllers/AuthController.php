@@ -10,13 +10,14 @@ use App\Models\Administration;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Auth\loginRequest;
 use App\Http\Requests\Auth\SignupRequest;
+use App\Models\OldDirection;
 
 class AuthController extends Controller
 {
     public function signupPage()
     {
 
-        $directions=Direction::select('id','direction')->get();
+        $directions=OldDirection::select('id','direction')->get();
 
         return view('Auth.signup',['directions'=>$directions]);
     }
@@ -36,7 +37,7 @@ class AuthController extends Controller
                  $class=Administration::class;
                  break;
                  case 'office':
-                    $auth['direction_id']=$request->direction;
+                    $auth['old_direction_id']=$request->direction;
                     $class=Office::class;
                     break;
 

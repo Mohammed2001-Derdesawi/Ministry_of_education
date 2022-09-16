@@ -20,7 +20,8 @@ class SupervisorController extends Controller
             'gender'=>$request->gender,
             'civil'=>$request->civil,
             'specialization_id'=>$request->specilization,
-             'direction_id'=>Auth::guard('office')->user()->direction->id
+             'old_direction_id'=>Auth::guard('office')->user()->old_direction->id,
+             'direction_id'=>null,
          ]);
 
        return redirect()->route('office.main')->with('success','تم تسجيل المشرف بنجاح');
@@ -40,7 +41,8 @@ class SupervisorController extends Controller
     {
         $supervisor=Supervisor::findOrFail($supervisor);
         $supervisor->update([
-            'direction_id'=>$request->direction
+            'direction_id'=>$request->direction,
+            'old_direction_id'=>null
           ]);
 
     }

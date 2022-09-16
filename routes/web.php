@@ -47,18 +47,21 @@ Route::middleware('office')->name('office.')->prefix('office/')->group(function(
     Route::post('school/create',[SchoolController::class,'AssignToOffice'])->name('school.change');
     Route::post('supervisor',[SupervisorController::class,'store'])->name('supervisor.create');
     Route::get('supervisor',[SupervisorController::class,'create'])->name('supervisor.create.page');
+    Route::post('logout',[OfficeController::class,'logout'])->name('logout');
 
 });
 
 
 Route::middleware('admin')->name('admin.')->prefix('admin/')->group(function(){
     Route::get('offices',[OfficeController::class,'alloffices'])->name('offices');
+    Route::get('office/{id}',[OfficeController::class,'OneOffice'])->name('office.show');
     Route::get('supervisors',[AdministrationController::class,'allsupervisors'])->name('supervisors');
     Route::post('supervisors/change',[SupervisorController::class,'AssignSuperVisorTo'])->name('supervisors.change');
     Route::get('direction/show/{id}',[AdministrationController::class,'showdirection'])->name('direction.details');
     Route::get('school/show/{id}',[SchoolController::class,'show'])->name('school.show');
     Route::post('school/change/{id}',[SchoolController::class,'changeStatus'])->name('school.change');
     Route::post('school/trasfer/{id}',[SchoolController::class,'AssignSchoolToOffice'])->name('school.trasfer');
+    Route::post('logout',[AdministrationController::class,'logout'])->name('logout');
 
 
 });
