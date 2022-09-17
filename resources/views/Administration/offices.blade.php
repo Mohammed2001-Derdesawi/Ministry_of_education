@@ -136,10 +136,11 @@
 
     <tr>
       <td colspan="2" class="colored colored-type">النوع</td>
-      <td>تعليم عام</td>
-      <td>تعليم أهلي</td>
-      <td> تحفيظ قرءان</td>
-      <td>  تربية خاصة</td>
+      @foreach ($school_ratings as $school_rating)
+      <td>{{$school_rating->name}}</td>
+      @endforeach
+
+    =
       <td class="colored">  المجموع الكلي لكل قطاع </td>
     </tr>
     <tr>
